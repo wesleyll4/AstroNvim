@@ -1,8 +1,14 @@
 local is_available = astronvim.is_available
 
-local maps = { n = {}, v = {}, t = {}, [""] = {} }
+local maps = { n = {}, i = {}, v = {}, t = {}, [""] = {} }
 
 maps[""]["<Space>"] = "<Nop>"
+
+-- Vs Alt movement
+maps.n["<A-k>"] = { ":m .-2<CR>", desc = "Move Up" }
+maps.n["<A-j>"] = { ":m .+1<CR>", desc = "Move Down" }
+maps.i["<A-k>"] = { "<ESC>:m .-2<CR>i", desc = "Move Down" }
+maps.i["<A-j>"] = { "<ESC>:m .+1<CR>i", desc = "Move Down" }
 
 -- Normal --
 -- Standard Operations
